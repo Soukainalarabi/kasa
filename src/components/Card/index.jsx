@@ -24,7 +24,12 @@ function CardComponents({ id, title, cover, pictures }) {
         onClick={() => handleClick(title)}
         src={cover}
         alt="couverture"
-        style={{ height: 340, borderRadius: 10, objectFit: 'cover' }}
+        style={{
+          height: 340,
+          borderRadius: 10,
+          objectFit: 'cover',
+          cursor: 'pointer',
+        }}
       />
       <Card.Text
         style={{

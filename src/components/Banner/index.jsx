@@ -13,7 +13,9 @@ function Banner({ imageCover }) {
 
       <Card.ImgOverlay>
         <Card.Title
-          className="fs-1"
+          className={`fs-1 ${
+            location.pathname === '/' ? 'accueil' : 'apropos'
+          }`}
           style={{ textAlign: 'center', paddingTop: '6%' }}
         >
           Chez vous, partout et ailleurs

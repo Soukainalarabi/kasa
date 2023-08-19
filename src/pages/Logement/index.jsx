@@ -8,7 +8,7 @@ import SlideShow from '../../components/SlideShow';
 import Erreur from '../../components/Erreur';
 import locationListe from '../../datas/locationListe.json';
 import Button from 'react-bootstrap/Button';
-import DropDownLarge from '../../components/DropDownLarge';
+import Collapse from '../../components/Collapse';
 import Rating from '../../components/Rating';
 
 import '../../style.css';
@@ -47,13 +47,13 @@ function Logement() {
         </div>
       </div>
       <div className="descEquipemnt">
-        <DropDownLarge
+        <Collapse
           className="dropDown"
           title="Description"
           description={filtredLocation.description}
           style={{ width: '44%' }}
         />
-        <DropDownLarge
+        <Collapse
           title="Equipments"
           description={filtredLocation.equipments.map((equipement) => (
             <div className="equipementDiv">{equipement}</div>

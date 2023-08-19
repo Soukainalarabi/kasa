@@ -13,7 +13,7 @@ const StyledDiv = styled.div`
   display: ${(props) => (props.isClicked ? 'block' : 'none')};
 `;
 
-function DropDownLarge({ title, description }) {
+function Collapse({ title, description }) {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
@@ -42,4 +42,4 @@ function DropDownLarge({ title, description }) {
   );
 }
 
-export default DropDownLarge;
+export default Collapse;

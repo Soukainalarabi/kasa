@@ -33,23 +33,28 @@ function SlideShow({ pictures }) {
           </div>
         ))}
       </div>
-
-      <img
-        className="avantIcon"
-        src={vector1}
-        alt="imageavant"
-        onClick={() =>
-          index == 0 ? setIndex(pictures.length - 1) : setIndex(index - 1)
-        }
-      />
-      <img
-        className="apresIcon"
-        src={vector}
-        alt="imageapres"
-        onClick={() =>
-          index == pictures.length - 1 ? setIndex(0) : setIndex(index + 1)
-        }
-      />
+      {pictures.length > 1 ? (
+        <>
+          <img
+            className="avantIcon"
+            src={vector1}
+            alt="imageavant"
+            onClick={() =>
+              index == 0 ? setIndex(pictures.length - 1) : setIndex(index - 1)
+            }
+          />
+          <img
+            className="apresIcon"
+            src={vector}
+            alt="imageapres"
+            onClick={() =>
+              index == pictures.length - 1 ? setIndex(0) : setIndex(index + 1)
+            }
+          />
+        </>
+      ) : (
+        <div style={{ display: 'none' }}></div>
+      )}
     </div>
   );
 }

@@ -4,11 +4,10 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 
-function CardComponents({ id, title, cover, pictures }) {
+function CardComponents({ id, title, cover }) {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/logement/${id}`);
-    console.log({ pictures });
   };
   return (
     <Col
@@ -31,17 +30,7 @@ function CardComponents({ id, title, cover, pictures }) {
           cursor: 'pointer',
         }}
       />
-      <Card.Text
-        style={{
-          position: 'absolute',
-          marginLeft: '1%',
-          marginTop: '-2%',
-          width: '10%',
-          color: ' #FFFFFF',
-        }}
-      >
-        {title}
-      </Card.Text>
+      <Card.Text>{title}</Card.Text>
     </Col>
   );
 }
@@ -49,14 +38,12 @@ CardComponents.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   cover: PropTypes.string,
-  pictures: PropTypes.string,
 };
 
 CardComponents.defaultProps = {
   id: '',
   title: '',
   cover: '',
-  pictures: '',
 };
 
 export default CardComponents;

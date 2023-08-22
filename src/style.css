@@ -1,34 +1,60 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
+html{
+    height: 100%;
+}
 body {
   font-family: 'Montserrat', sans-serif;
+  min-height: 100%;
+  padding-bottom: 6.7rem;
+  position: relative;
+}
+
+#root{
+    min-height: 100%;
+    padding-bottom: 6.7rem;
 }
 
 a{
     color: rgb(255, 96, 96)!important;
     text-decoration:none;
 }
-
-.accueil{
+.row{
+    display: grid!important;
+    grid-template-columns: repeat(3, 1fr)!important;
+    margin: 0px!important;
+    justify-items: center!important
+    }
+    .g-4{
+        padding-left: 0;
+    }
+.nav-item.accueil{
     padding-right: 29px}
 .apropos{
     display: none;
   }
     
     /* ///////style footer */
-    .footer{
-        /* position:absolute; */
-        bottom:0;  /* on le colle en bas */
-        height: 209px;
-        margin-top: 2%;
-        padding: 66px 29px;
-        background-color: black;
-        text-align: center;
-        color: white;
-       z-index: 2;
-       
-
+    .footer-accueil .footer{
+    padding: 66px 29px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    margin-top:2%;
+    height: 200px;
     }
+    .footer{
+    margin-top: 2%;
+    padding: 66px 29px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 100%;
+    bottom: 0; 
+    position: absolute;
+    }
+    
     /* .carousel-indicators{
         display: none!important ;
     } */
@@ -143,6 +169,10 @@ border-radius: 10px;
     margin: 0;
 
 }
+.container{
+     max-width: 1200px; 
+    height: 100%;
+}
 .logement .accordion-body {
     border-radius: 0px;
     height:249px;
@@ -157,6 +187,11 @@ border-radius: 10px;
     flex-direction: column;
     align-items: flex-end;
 
+}
+.cards{
+    background-color:  #F6F6F6;
+    border-radius: 25px;
+    margin-top: 5%;
 }
 .title-button{  
     height: 62px;
@@ -228,41 +263,149 @@ border-radius: 10px;
               .off {
                 color: #ccc;
               }
+              .card-text{
+                position: absolute;
+        margin-left: 1%;
+          margin-top: -3%;
+          width: 300px;
+          color:  #FFFFFF;
+              }
 /* /////Responsive */
+@media(max-width:1600px){
+    .card-text{
+     
+  margin-top: -4%;
+ 
+      }
+     
+      
+}
+@media(max-width:1150px){
+    .card-text{
+     
+  margin-top: -5%;
+ 
+      }
+}
+@media(max-width:1050px){
+   .cards .col{
+        width: 312px!important;
+    }
+    /* .apresIcon img , .avantIcon img {
+        width: 30px;
+        height: 30px;
+       } */
+}
+@media(max-width:1024px){
+    .row{
+    display: grid!important;
+    gap: 0!important;
+    grid-template-columns: repeat(2, 1fr)!important;
+    margin: 0px!important;
+    justify-items: center!important
+    
+    }
+    .apresIcon{
+        margin-left: -7%;
+    }
+    .avantIcon{
+        margin-left: 2%;
+    }
+    .apresIcon img , .avantIcon img {
+        width: 30px;
+        height: 30px;
+       }
+    .g-4{
+        padding-left: 0px!important;
+    }
+    .card-text{
+        position: relative!important;
+        margin-left: 3%!important;
+    margin-top: -18%!important;
+    font-size: 15px!important;
+    width: 250px!important;
+    }
+    .fs-1{
+        padding-top: 70px!important;
+    }
+    .flexDirection h1 {
+        font-size: 30px;
+        width: 500px;
+    }
+    .cards .col{
+        width: 340px!important;
+        height: 340px!important;
+    }
+}
+@media (max-width:991px){
+    .apresIcon {
+        margin-left: -9%;
+    }
+    .avantIcon{
+        margin-left: 3%;
+    }
+}
 @media (max-width: 768px){
+    .row{
+        display: grid!important;
+       
+        grid-template-columns: repeat(1, 1fr)!important;
+        }
 .g-4{
-    padding-left: 3% !important;
+    padding-left: 0 !important;
     padding-top:0
 }
-.col{
-    width: 97%!important;
+.apresIcon img, .avantIcon img {
+    width: 16px;
+}
+.avantIcon{
+    margin-left: 4%;
+}
+.banner {
+padding-right: 14px!important;
+padding-left: 14px!important;
+}
+.cards .col{
+    width: 100%!important;
 }
 .flexDirection col{
     width: 100%!important;
 }
+
 .card-text{
-    /* position: relative!important; */
     margin-left: 2%!important;
-    margin-top: -11%!important;
+    margin-top: -9%!important;
     width: 295.59px!important;
     height: 52px
 }
-.banner  img{
-    height: 111px!important;
-}
+.navbar-brand img{
+margin-left: 20px;}
 .navbar-brand img{
     width: 145px!important;
     height: 47px!important;
-}
+    margin-left: 17px;}
 .nav{
     font-size: 15px!important;
+    margin-right: 9px;
+}
+.banner-accueil .banner{
+    height: 111px;
 }
 .fs-1{
-    width: 217px;
-    height: 48px;
+Width:217px;
+Height:48px;
+margin-left: 3%;
+    word-wrap: break-word;
+    text-overflow: initial;
     text-align: start!important;
+    margin-top: 14px;
+    line-height: 24px;
     padding-top: 0!important;
     font-size: 24px!important;
+}
+.cards{
+    background-color:  #FFFFFF;
+   margin-top: 0;
 }
 .descEquipemnt{
     margin-top: 5%;
@@ -286,19 +429,80 @@ border-radius: 10px;
     display: none!important
 }
 .dropDowns {
-    width: 100%!important;
+    width: 96%!important;
 }
 .information-appart {
     display: flex;
     flex-direction: column;
     align-items: baseline;}
+    .flexDirection h1 {
+        font-size: 29px;
+        width: 281px;
+        line-height: 35px;
+    }
+    .groupeTags button{
+        font-size: 13px;
+    }
+    .btn-outline-primary +.btn-outline-primary {
+        margin-left: 5px!important;
+    }
+    .descEquipemnt .contenuShow {
+        height: auto!important;
+    }
+    .userCard p {
+        margin-left: 3%;
+        margin-top: 9%;
+        width: 41%;
+        font-size: 14px;
+    }
+}
+@media (max-width: 520px){
+
+    .card-text{
+        margin-top: -11%!important;
+        font-size: 16px;
+        width: 233px!important;
+    } 
+    .btn-outline-primary +.btn-outline-primary {
+        margin-left: 2px!important;
+        font-size: 11px;
+    }  
+    .apresIcon {
+        margin-left: -11%;
+        }
 }
 @media(max-width: 466px){
     .card-text{
-        margin-top: -18%!important;
+        position: absolute;
+        margin-top: -15%!important;
+        font-size: 12px!important;
+        width: 270px!important;
     }
     .nav{
         font-size: 12px!important;
+        margin-right: 9px;
+    
     }
-};
+    .groupeTags button{
+        font-size: 12px;
+        padding: 6px 2px;    }
+    .userImage{
+        width: 45px;
+        height: 45px;
+    }
+    .dropDowns {
+        width: 93%!important;
+    }
+   .nav-item.accueil {
+    padding-right: 12px;
+    }
+   
+    .apresIcon {
+    margin-left: -12%;
+    }
+   
+       
+   
+}
+
     

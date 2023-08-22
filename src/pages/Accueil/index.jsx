@@ -5,26 +5,20 @@ import Banner from '../../components/Banner';
 import CardComponents from '../../components/Card';
 import locationListe from '../../datas/locationListe.json';
 import banner from '../../assets/bannerAccueil.png';
+import Footer from '../../components/Footer';
 
 function Accueil() {
   return (
     <div>
       <Container style={{ marginTop: '2%' }}>
-        <Banner imageCover={banner} />
-        <div
-          style={{
-            backgroundColor: ' #F6F6F6',
-            borderRadius: 25,
-            marginTop: '5%',
-          }}
-        >
-          <Row
-            xs={1}
-            md={2}
-            className="g-4"
-            style={{ paddingLeft: '9%', paddingTop: '4%', gap: '3% 2%' }}
-          >
-            {locationListe.map(({ id, title, cover, location }) => (
+        <div className="banner-accueil">
+          <Banner imageCover={banner} />
+        </div>
+        <div className="cards">
+          <Row xs={1} md={2} className="g-4">
+            {locationListe.map(({
+              id, title, cover, location,
+            }) => (
               <CardComponents
                 key={id}
                 id={id}
@@ -36,6 +30,9 @@ function Accueil() {
           </Row>
         </div>
       </Container>
+      <div className="footer-accueil">
+        <Footer />
+      </div>
     </div>
   );
 }

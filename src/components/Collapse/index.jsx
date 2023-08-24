@@ -5,10 +5,10 @@ import icon from '../../assets/arrow_back.png';
 import '../../style.css';
 
 const StyledImg = styled.img`
-  transform: ${(props) => (props.isClicked ? 'rotate(0deg)' : 'rotate(180deg)')};
+transform: ${({ transform }) => transform};
 `;
 const CollapsibleContent = styled.div`
-  display: ${(props) => (props.isClicked ? 'block' : 'none')};
+display: ${({ display }) => display};
 `;
 function Collapse({ title, description }) {
   const [isClicked, setIsClicked] = useState(false);
@@ -16,7 +16,6 @@ function Collapse({ title, description }) {
   const handleClick = () => {
     setIsClicked((prevState) => !prevState);
   };
-
   return (
     <div className="dropDown">
       <button
@@ -29,7 +28,7 @@ function Collapse({ title, description }) {
           <h1>{title}</h1>
           <StyledImg
             onClick={handleClick}
-            isClicked={isClicked}
+            transform={isClicked ? 'rotate(0deg)' : 'rotate(180deg)'}
             className="iconOpen"
             src={icon}
             alt="open"
@@ -37,9 +36,9 @@ function Collapse({ title, description }) {
           />
         </div>
       </button>
-      <CollapsibleContent isClicked={isClicked}>
+      <CollapsibleContent display={isClicked ? 'block' : 'none'}>
         <div className="contenuShow">
-          <p>{description}</p>
+          <div className="contenuShow-text">{description}</div>
         </div>
       </CollapsibleContent>
     </div>
@@ -48,7 +47,13 @@ function Collapse({ title, description }) {
 // Prop validation
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]),
+};
+Collapse.defaultProps = {
+  description: '',
 };
 
 export default Collapse;

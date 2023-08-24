@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes
 import '../../style.css';
 
-function Rating({ initialTag }) {
-  const [rating, setRating] = useState(initialTag);
+function Rating({ initialRating }) {
+  const [rating, setRating] = useState(initialRating);
 
   return (
     <div className="star-rating">
@@ -27,7 +27,7 @@ function Rating({ initialTag }) {
 
 // Define prop types
 Rating.propTypes = {
-  initialTag: PropTypes.number.isRequired,
+  initialRating: PropTypes.string.isRequired,
 };
 
 export default Rating;

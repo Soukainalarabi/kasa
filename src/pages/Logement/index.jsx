@@ -8,7 +8,6 @@ import locationListe from '../../datas/locationListe.json';
 import Collapse from '../../components/Collapse';
 import Rating from '../../components/Rating';
 import Footer from '../../components/Footer';
-
 import '../../style.css';
 
 function Logement() {
@@ -17,6 +16,9 @@ function Logement() {
   if (!filtredLocation) {
     return <Navigate to="/404" />;
   }
+  const initialRating = filtredLocation.rating;
+  const descriptionLocation = filtredLocation.description;
+  const equipementLocation = filtredLocation.equipments;
   return (
     <>
       <Container style={{ marginTop: '2%' }}>
@@ -27,7 +29,7 @@ function Logement() {
             <p className="locationAppart">{filtredLocation.location}</p>
             <div className="groupeTags">
               {filtredLocation.tags.map((tag) => (
-                <Button variant="outline-primary">{tag}</Button>
+                <Button key={tag} variant="outline-primary">{tag}</Button>
               ))}
             </div>
           </Col>
@@ -41,21 +43,23 @@ function Logement() {
               />
             </div>
             <div className="rating">
-              <Rating initialTag={filtredLocation.rating} />
+              <Rating initialRating={initialRating} />
             </div>
           </div>
         </div>
         <div className="descEquipemnt">
           <Collapse
+            key="Description"
             className="dropDown"
             title="Description"
-            description={filtredLocation.description}
+            description={descriptionLocation}
             style={{ width: '44%' }}
           />
           <Collapse
+            key="Equipments"
             title="Equipments"
-            description={filtredLocation.equipments.map((equipement) => (
-              <div className="equipementDiv">{equipement}</div>
+            description={equipementLocation.map((equipement) => (
+              <div key={equipement} className="equipementDiv">{equipement}</div>
             ))}
           />
         </div>

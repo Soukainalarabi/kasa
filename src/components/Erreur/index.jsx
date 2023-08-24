@@ -7,15 +7,16 @@ import bug from '../../assets/404.png';
 function Erreur() {
   return (
     <Container style={{ marginTop: '10%' }}>
-      <Image src={bug} alt="erreur" style={{ marginLeft: '26%' }} />
+      <Image src={bug} alt="erreur" className="erreur-img" />
       <div
-        className="mx-auto fs-1"
+        className="mx-auto"
         style={{ color: '#FF6060', textAlign: 'center', marginTop: '3%' }}
       >
-        Oups! La page que vous demandez n&lsquo;existe pas.
-        <div className="home" style={{ marginTop: '5%' }}>
-          <Link to="/">retourner à la page d&lsquo;Accueil</Link>
-        </div>
+        <p> Oups! La page que </p>
+        <p>vous demandez n&lsquo;existe pas.</p>
+      </div>
+      <div className="home" style={{ marginTop: '5%' }}>
+        <Link to="/">retourner à la page d&lsquo;Accueil</Link>
       </div>
     </Container>
   );

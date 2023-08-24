@@ -22,6 +22,7 @@ function SlideShow({ pictures }) {
       <div className="carousel-s">
         {pictures.map((picture, idx) => (
           <div
+            key={picture}
             className={`carousel-s-item ${index === idx ? '' : 'hidden-card'}`}
           >
             <img

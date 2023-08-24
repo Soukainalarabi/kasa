@@ -7,8 +7,11 @@ function Footer() {
     <div className="footer">
       <Stack
         gap={2}
-        className="col-md-5 mx-auto"
-        style={{ alignItems: 'center' }}
+        className="col-md-5 "
+        style={{
+          display: 'block',
+          margin: 'auto',
+        }}
       >
         <div className="p">
           <img src={logoFooter} alt="logo du footer" />
